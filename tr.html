@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="icon" href="images/HilbetIcon.webp" type="image/webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilbet Giriş Adresi: Güncel Site</title>
+    <meta name="description" content="Hilbet sitesi, geniş oyun yelpazesi güvenilir ödeme yöntemleri, kazandıran bonusları ve daha fazlasıyla sizleri bekliyor. İyi bir oyun deneyimi için tıkla!"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #73c986;
+            --dark-green: #4ea65e;
+            --light-green: #9dfdb0;
+            --accent-green: #5db871;
+            --bg-dark: #0a0e0c;
+            --bg-darker: #060908;
+            --card-bg: rgba(20, 25, 22, 0.6);
+            --border-color: rgba(115, 201, 134, 0.1);
+            --text-primary: #ffffff;
+            --text-secondary: #c5d1ca;
+            --text-muted: #8a9892;
+            --gradient-1: linear-gradient(135deg, #73c986 0%, #5db871 100%);
+            --gradient-2: linear-gradient(135deg, rgba(115, 201, 134, 0.1) 0%, rgba(93, 184, 113, 0.05) 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(ellipse at top, #0d110f 0%, #0a0e0c 50%, #060908 100%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated mesh gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(115, 201, 134, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(93, 184, 113, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(115, 201, 134, 0.02) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+            animation: meshMove 20s ease-in-out infinite;
+        }
+
+        @keyframes meshMove {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 14, 12, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 14px 0;
+            background: rgba(6, 9, 8, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .logo {
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: -1px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 36px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--light-green);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .btn-header {
+            background: var(--gradient-1);
+            color: white;
+            padding: 11px 26px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 20px rgba(115, 201, 134, 0.3);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(115, 201, 134, 0.2);
+        }
+
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(115, 201, 134, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-2);
+            border: 1px solid rgba(115, 201, 134, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--light-green);
+            font-weight: 600;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .hero-badge::before {
+            content: '●';
+            color: var(--primary-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+            letter-spacing: -2px;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--gradient-1);
+            color: white;
+            padding: 18px 42px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            box-shadow: 0 12px 40px rgba(115, 201, 134, 0.35);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(115, 201, 134, 0.45);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover .cta-icon {
+            transform: translateX(4px);
+        }
+
+        /* Section */
+        .section {
+            margin: 80px 0;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: clamp(32px, 5vw, 56px);
+            margin-bottom: 32px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-green), transparent);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .section-card:hover {
+            border-color: rgba(115, 201, 134, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
+        }
+
+        .section-title {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+        }
+
+        .section-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Access Grid */
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 48px 0;
+        }
+
+        .access-card {
+            background: rgba(10, 14, 12, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(115, 201, 134, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .access-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(115, 201, 134, 0.4);
+            box-shadow: 0 16px 48px rgba(115, 201, 134, 0.2);
+        }
+
+        .access-card:hover::after {
+            opacity: 1;
+        }
+
+        .access-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--gradient-2);
+            border: 1px solid rgba(115, 201, 134, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.4s;
+        }
+
+        .access-card:hover .access-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .access-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .access-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .access-link {
+            font-size: 0.9rem;
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            position: relative;
+            z-index: 1;
+            transition: gap 0.3s;
+        }
+
+        .access-link:hover {
+            gap: 10px;
+        }
+
+        /* Payment Flow */
+        .payment-flow {
+            display: grid;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .payment-item {
+            display: flex;
+            gap: 20px;
+            background: rgba(10, 14, 12, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 26px;
+            transition: all 0.3s ease;
+        }
+
+        .payment-item:hover {
+            border-color: rgba(115, 201, 134, 0.3);
+            transform: translateX(8px);
+            background: rgba(10, 14, 12, 0.6);
+        }
+
+        .payment-icon {
+            width: 52px;
+            height: 52px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            background: var(--gradient-2);
+            border: 1px solid rgba(115, 201, 134, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .payment-item:hover .payment-icon {
+            transform: scale(1.1);
+        }
+
+        .payment-content h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .payment-content p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Support Section */
+        .support-layout {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .support-primary {
+            background: var(--gradient-2);
+            border: 1px solid rgba(115, 201, 134, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-primary::after {
+            content: '';
+            position: absolute;
+            top: -100%;
+            right: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(115, 201, 134, 0.15) 0%, transparent 60%);
+            animation: supportGlow 8s linear infinite;
+        }
+
+        @keyframes supportGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .support-badge {
+            display: inline-block;
+            background: rgba(115, 201, 134, 0.2);
+            border: 1px solid rgba(115, 201, 134, 0.3);
+            color: var(--light-green);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        .support-primary h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-primary p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-btn {
+            display: inline-block;
+            background: var(--gradient-1);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 8px 24px rgba(115, 201, 134, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .support-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(115, 201, 134, 0.4);
+        }
+
+        .support-secondary {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .support-card {
+            background: rgba(10, 14, 12, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .support-card:hover {
+            border-color: rgba(115, 201, 134, 0.3);
+            transform: translateX(6px);
+        }
+
+        .support-card-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: var(--gradient-2);
+            border: 1px solid rgba(115, 201, 134, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .support-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 6px;
+        }
+
+        .support-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(6, 9, 8, 0.9);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-col h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-green);
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .support-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .section {
+                margin: 50px 0;
+            }
+
+            .access-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .payment-flow {
+                gap: 16px;
+            }
+
+            .payment-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-card {
+                padding: 28px 20px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="#" class="logo">Hilbet</a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#">Hilbet TV</a></li>
+                        <li><a href="#">Güvenilir Mi?</a></li>
+                        <li><a href="#">Şikayet</a></li>
+                        <li><a href="#">Bonus</a></li>
+                    </ul>
+                </nav>
+
+                <button class="mobile-toggle" aria-label="Menu">☰</button>
+                
+                <a href="https://xn--823tmebet-j5a.com/tr" class="btn-header">Hilbet Giriş</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-badge">
+                    <span>Güncel Giriş Adresi</span>
+                </div>
+                <h1>Hilbet Giriş Adresi</h1>
+                <p>Hilbet adresi güncellendi. Yeni siteye güvenli ve hızlı erişim için aşağıdaki butona tıklayın!</p>
+                <a href="https://xn--823tmebet-j5a.com/tr" class="cta-button">
+                    <span>Hilbet Güncel Sitesi</span>
+                    <span class="cta-icon">→</span>
+                </a>
+            </div>
+        </section>
+
+        <div class="container">
+            
+            <!-- Hilbet Nedir -->
+            <section class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Hilbet Nedir?</h2>
+                    <p class="section-text">Hilbet, yüksek oranları, zengin oyun seçenekleri ve kullanıcı dostu arayüzüyle 2014 yılından bu yana kesintisiz hizmet veren köklü bir online bahis platformudur. Kurulduğu günden bu yana güvenilir yapısı ve kaliteli hizmet anlayışıyla büyümeye devam eden site, zaman zaman BTK tarafından getirilen erişim engellemelerinden etkilense de sunduğu alternatif çözümlerle <strong>Hilbet giriş</strong> adresine kesintisiz şekilde erişmenizi sağlar.</p>
+                    <p class="section-text">Yabancı lisanslı bahis sitelerinde karşılaşılan en yaygın sorun erişim kısıtlamaları olsa da firma bu konuda kullanıcılarına güven verir. Platform, her adres değişikliğini anlık olarak resmi kanallar ve sosyal medya hesapları üzerinden duyurarak süreci kolaylaştırır.</p>
+                </div>
+            </section>
+
+            <!-- Giriş Çözümleri -->
+            <section class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Hilbet Giriş Çözümleri</h2>
+                    <p class="section-text">Hilbet, sunduğu spor bahisleri, canlı casino ve slot oyunlarıyla geniş kullanıcı kitlesine hitap eden yabancı lisanslı bir platformdur. Ancak ülkemizde BTK tarafından uygulanan erişim engelleri nedeniyle siteye zaman zaman doğrudan erişim mümkün olmaz.</p>
+
+                    <div class="access-grid">
+                        <div class="access-card">
+                            <div class="access-icon">📱</div>
+                            <h3>Mobil uygulama</h3>
+                            <p>Mobil uygulama, erişim engellerinden etkilenmeden hesabınıza erişmenizi sağlar ve web sürümüne göre daha hızlıdır.</p>
+                            <a href="https://xn--823tmebet-j5a.com/tr" class="access-link">Uygulama talebi →</a>
+                        </div>
+
+                        <div class="access-card">
+                            <div class="access-icon">🔗</div>
+                            <h3>Kısa link / yer imi</h3>
+                            <p>Masaüstünde en kesin çözüm. Yer imlerine ekleyerek her seferinde en güncel domaine ulaşırsınız.</p>
+                            <a href="https://xn--823tmebet-j5a.com/tr" class="access-link">Kısa link al →</a>
+                        </div>
+
+                        <div class="access-card">
+                            <div class="access-icon">📣</div>
+                            <h3>Resmi sosyal medya</h3>
+                            <p>Resmi hesapları takip ederek duyurulan son giriş adreslerinden anında haberdar olun.</p>
+                            <a href="https://xn--823tmebet-j5a.com/tr" class="access-link">Hesapları gör →</a>
+                        </div>
+
+                        <div class="access-card">
+                            <div class="access-icon">🛡</div>
+                            <h3>VPN (Warp)</h3>
+                            <p>VPN ile erişim de mümkün. Cloudflare Warp güvenli ve hızlı bir tercihtir.</p>
+                            <a href="https://xn--823tmebet-j5a.com/tr" class="access-link">Warp bilgisi →</a>
+                        </div>
+                    </div>
+
+                    <p class="section-text">Yukarıdaki yöntemleri kullanarak güncel giriş adresine güvenli ve hızlı bir şekilde erişir, kesintisiz bahis ve casino deneyiminin tadını çıkarırsınız.</p>
+                </div>
+            </section>
+
+            <!-- Güvenilir mi -->
+            <section class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Hilbet Güvenilir mi?</h2>
+                    <p class="section-text">Hilbet, 2021 yılından bu yana hizmet veren ve kesintisiz oyun deneyimi sunan yabancı lisanslı bir platformdur. Site, yüksek oranları, zengin içerik seçenekleri ve profesyonel destek ekibiyle dikkat çeker. Platform <strong>Curacao eGaming</strong> lisansı altında faaliyet gösterir ve yasal denetimlere tabidir.</p>
+                    <p class="section-text">Hilbet'in güvenilirliği sadece lisansıyla sınırlı değildir, aynı zamanda para yatırma ve çekme süreçlerinde de şeffaf ve hızlı işlem politikasıyla öne çıkar. Hesabınıza bakiye yüklemek ya da kazançlarınızı nakde dönüştürmek istediğinizde, kripto para, banka havalesi veya dijital cüzdanlar gibi farklı yöntemlerle güvenle işlem yaparsınız.</p>
+                </div>
+            </section>
+
+            <!-- Ödeme Yöntemleri -->
+            <section class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Hilbet Para Yatırma ve Çekme Yöntemleri</h2>
+                    <p class="section-text">Finansal işlemlerinizi güvenli ve hızlı bir şekilde tamamlayabilmeniz için farklı ödeme alternatifleri sunar. Her yöntem işlem kolaylığı ve hız açısından avantaj sağlamayı hedefler.</p>
+
+                    <div class="payment-flow">
+                        <div class="payment-item">
+                            <div class="payment-icon">🏦</div>
+                            <div class="payment-content">
+                                <h3>Banka havalesi</h3>
+                                <p>Banka havalesi en güvenilir yöntemlerden biridir. Hesabınıza kısa sürede bakiye aktarır veya kazançlarınızı doğrudan hesabınıza çekersiniz.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-item">
+                            <div class="payment-icon">💼</div>
+                            <div class="payment-content">
+                                <h3>Elektronik cüzdanlar</h3>
+                                <p>Elektronik cüzdanlar banka hesabı gerektirmeden işlem yapmanıza imkan tanır. Hızlı transfer süreleriyle en çok tercih edilen seçeneklerdendir.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-item">
+                            <div class="payment-icon">🪙</div>
+                            <div class="payment-content">
+                                <h3>Kripto paralar</h3>
+                                <p>Kripto paralar üzerinden yapılan transferler gizlilik ve hız açısından oldukça avantajlıdır. Üçüncü taraf müdahalesi olmadan güvenle işlem yaparsınız.</p>
+                            </div>
+                        </div>
+
+                        <div class="payment-item">
+                            <div class="payment-icon">💳</div>
+                            <div class="payment-content">
+                                <h3>Kredi kartı</h3>
+                                <p>Kredi kartı sadece yatırım için tercih edilebilecek bir yöntem olsa da tutarın hesabınıza anlık olarak yansıması büyük bir avantajdır.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="section-text">Platform tüm finansal işlemlerinizde yüksek güvenlik standartları uygular. Böylece <strong>Hilbet giriş</strong> adresindeki yatırım ve çekim süreçlerinizi hem pratik hem de güvenilir şekilde tamamlarsınız.</p>
+                </div>
+            </section>
+
+            <!-- Müşteri Hizmetleri -->
+            <section class="section">
+                <div class="section-card">
+                    <h2 class="section-title">Hilbet Müşteri Hizmetleri</h2>
+                    
+                    <div class="support-layout">
+                        <div class="support-primary">
+                            <div class="support-badge">7/24 Canlı Destek</div>
+                            <h2>En hızlı iletişim kanalı</h2>
+                            <p>7/24 hizmet veren canlı destek hattı tüm sorularınızı anında yanıtlayan en hızlı iletişim seçeneğidir. Alt kısımdaki sohbet simgesine tıklayarak bir temsilciyle görüşmeye başlarsınız.</p>
+                            <a href="https://xn--823tmebet-j5a.com/tr" class="support-btn">Sohbeti Başlat →</a>
+                        </div>
+
+                        <div class="support-secondary">
+                            <div class="support-card">
+                                <div class="support-card-icon">📞</div>
+                                <div>
+                                    <h3>Sesli iletişim</h3>
+                                    <p>Daha detaylı yardım almanız gereken durumlar için sesli iletişim seçeneği de mevcuttur.</p>
+                                </div>
+                            </div>
+
+                            <div class="support-card">
+                                <div class="support-card-icon">📧</div>
+                                <div>
+                                    <h3>E-posta desteği</h3>
+                                    <p>Teknik problemler, belge gönderimi ve detaylı bilgi talepleriniz için e-posta yoluyla destek alabilirsiniz.</p>
+                                </div>
+                            </div>
+
+                            <div class="support-card">
+                                <div class="support-card-icon">💬</div>
+                                <div>
+                                    <h3>Sosyal medya</h3>
+                                    <p>Aktif sosyal medya hesapları sayesinde kampanyaları takip eder, sorularınızı özel mesajla iletebilirsiniz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Hilbet</h3>
+                    <p>Hilbet giriş adresi, güncel oyunlar ve bahis stratejileri hakkında merak edilen her şey burada!</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Hilbet Hakkında</h3>
+                    <a href="#">Hilbet TV</a>
+                    <a href="#">Güvenilir mi?</a>
+                    <a href="#">Şikayet</a>
+                    <a href="#">Bonus</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Hızlı Linkler</h3>
+                    <a href="#">Giriş</a>
+                    <a href="#">Kayıt</a>
+                    <a href="#">Canlı Destek</a>
+                    <a href="#">SSS</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>İletişim</h3>
+                    <p>E-posta: info@hilbet.com</p>
+                    <p>7/24 Canlı Destek</p>
+                    <p>Curacao eGaming Lisanslı</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Hilbet Güncel Giriş © 2026 - Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll effect for header
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
